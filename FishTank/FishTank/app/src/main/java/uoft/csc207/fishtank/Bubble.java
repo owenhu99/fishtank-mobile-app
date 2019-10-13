@@ -65,15 +65,11 @@ public class Bubble {
     drawString(canvas, appearance, x, y);
   }
 
-  /** Causes this item to take its turn in the fish-tank simulation, moving straight up. */
-  public void floatStraightUp() {
-
-    // Move upwards.
-    y--;
-
-    // Figure out whether to grow, if at all.
+  /** Randomly decide whether to grow the bubble * */
+  public void grow() {
+    // Generate random double
     d = Math.random();
-    // Oocasinally change a . to a o or a o to a O
+    // Decide whether to grow or not using the random double
     if (d < 0.05) {
       // If the appearance is a ., change it to an o
       if (appearance.equals(".")) appearance = "o";
@@ -81,6 +77,17 @@ public class Bubble {
       else if (appearance.equals("o")) appearance = "O";
     }
   }
+
+  /** Causes this item to take its turn in the fish-tank simulation, moving straight up. */
+  public void floatStraightUp() {
+
+    // Move upwards.
+    y--;
+
+    // Figure out whether to grow.
+    grow();
+  }
+
   /** Causes this item to take its turn in the fish-tank simulation, moving up and left. */
   public void floatLeftUp() {
 
@@ -88,16 +95,10 @@ public class Bubble {
     y--;
     x -= 1; // left
 
-    // Figure out whether to grow, if at all.
-    d = Math.random();
-    // Oocasinally change a . to a o or a o to a O
-    if (d < 0.05) {
-      // If the appearance is a ., change it to an o
-      if (appearance.equals(".")) appearance = "o";
-      // If the appearance is an o, change it to a O
-      else if (appearance.equals("o")) appearance = "O";
-    }
+    // Figure out whether to grow.
+    grow();
   }
+
   /** Causes this item to take its turn in the fish-tank simulation. */
   public void floatRightUp() {
 
@@ -105,13 +106,6 @@ public class Bubble {
     y--;
     x += 1; // right
     // Figure out whether to grow, if at all.
-    d = Math.random();
-    // Oocasinally change a . to a o or a o to a O
-    if (d < 0.05) {
-      // If the appearance is a ., change it to an o
-      if (appearance.equals(".")) appearance = "o";
-      // If the appearance is an o, change it to a O
-      else if (appearance.equals("o")) appearance = "O";
-    }
+    grow();
   }
 }

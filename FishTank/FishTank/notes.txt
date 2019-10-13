@@ -25,3 +25,9 @@ Fix: Changed the order of parameters x and y.
 Code affected: Bubble.floatStraightUp
 Flaw: Redundant assignment.
 Fix: Removed redundant assignment.
+
+#########
+# Step 6
+Code affected: Bubble.floatStraightUp, Bubble.floatLeftUp, Bubble.floatRightUp, Bubble
+Flaw: Repeated code segments in several methods.
+Fix: Added helper method Bubble.grow, and replaced the code segments with the method call.
