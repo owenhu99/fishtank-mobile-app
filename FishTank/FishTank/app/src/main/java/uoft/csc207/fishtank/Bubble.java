@@ -70,7 +70,6 @@ public class Bubble {
 
     // Move upwards.
     y--;
-    x = x; // no change left or right
 
     // Figure out whether to grow, if at all.
     d = Math.random();

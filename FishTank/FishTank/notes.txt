@@ -19,3 +19,9 @@ Fix: replaced if statement with a single assignment statement.
 Code affected: Bubble.draw, Bubble.drawString
 Flaw: Wrong order of parameters x and y.
 Fix: Changed the order of parameters x and y.
+
+#########
+# Step 5
+Code affected: Bubble.floatStraightUp
+Flaw: Redundant assignment.
+Fix: Removed redundant assignment.
