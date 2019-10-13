@@ -2,3 +2,8 @@
 # Step 1
 Code affected: none
 Created this file.
+
+#########
+# Step 2
+Code affected: all .java files
+Reformatted using the Google Java style formatter.
