@@ -7,3 +7,9 @@ Created this file.
 # Step 2
 Code affected: all .java files
 Reformatted using the Google Java style formatter.
+
+#########
+# Step 3
+Code affected: Fish.turnAround
+Flaw: unnecessary if, leading to duplicate code.
+Fix: replaced if statement with a single assignment statement.
