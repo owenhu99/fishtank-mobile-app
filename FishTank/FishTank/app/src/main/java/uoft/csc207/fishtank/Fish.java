@@ -14,10 +14,10 @@ public class Fish {
   /** Indicates whether this fish is moving right. */
   boolean goingRight;
 
-  /** This fish's first coordinate. */
-  int r;
-  /** This fish's second coordinate. */
-  private int c;
+  /** This fish's x coordinate. */
+  private int x;
+  /** This fish's y coordinate. */
+  private int y;
 
   private Paint paintText = new Paint();
 
@@ -37,17 +37,17 @@ public class Fish {
    * @param b the second coordinate.
    */
   public void setLocation(int a, int b) {
-    r = a;
-    c = b;
+    x = a;
+    y = b;
   }
 
   /** Causes this fish to blow a bubble. */
   protected void blowBubble() {
     Bubble b = new Bubble();
-    b.setLocation(c, r);
-    System.out.println(r + " " + c);
+    b.setLocation(y, x);
+    System.out.println(x + " " + y);
 
-    FishTankManager.myLittleFishies[r][c] = b;
+    FishTankManager.myLittleFishies[x][y] = b;
   }
 
   /** Build and initialize this fish's forward and backward appearances. */
@@ -112,7 +112,7 @@ public class Fish {
    * @param canvas the canvas on which to draw this item.
    */
   public void draw(Canvas canvas) {
-    drawString(canvas, appearance, r, c);
+    drawString(canvas, appearance, x, y);
   }
 
   /** Causes this item to take its turn in the fish-tank simulation. */
@@ -127,9 +127,9 @@ public class Fish {
     // Move one spot to the right or left in the direction I'm going. If I bump into a wall,
     // turn around.
     if (goingRight) {
-      c += 1;
+      y += 1;
     } else {
-      c -= 1;
+      y -= 1;
     }
 
     // Figure out whether I blow a bubble.
@@ -141,9 +141,9 @@ public class Fish {
     // Figure out whether to move up or down, or neither.
     d = Math.random();
     if (d < 0.1) {
-      r += 1;
+      x += 1;
     } else if (d < 0.2) {
-      r -= 1;
+      x -= 1;
     }
   }
 }

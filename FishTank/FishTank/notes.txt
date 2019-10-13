@@ -33,7 +33,13 @@ Flaw: Repeated code segments in several methods.
 Fix: Added helper method Bubble.grow, and replaced the code segments with the method call.
 
 #########
-# Step 6
+# Step 7
 Code affected: Bubble.grow
 Flaw: Used class attribute d that was not meant to be used (for that purpose).
 Fix: Added local variable rd in place of class attribute d.
+
+#########
+# Step 8
+Code affected: Fish
+Flaw: Ambiguous attribute names r and c.
+Fix: Changed r and c to x and y.
