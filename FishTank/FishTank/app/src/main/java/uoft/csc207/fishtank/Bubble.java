@@ -62,7 +62,7 @@ public class Bubble {
    * @param canvas the graphics context in which to draw this item.
    */
   public void draw(Canvas canvas) {
-    drawString(canvas, appearance, y, x);
+    drawString(canvas, appearance, x, y);
   }
 
   /** Causes this item to take its turn in the fish-tank simulation, moving straight up. */

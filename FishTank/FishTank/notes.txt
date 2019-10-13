@@ -13,3 +13,9 @@ Reformatted using the Google Java style formatter.
 Code affected: Fish.turnAround
 Flaw: unnecessary if, leading to duplicate code.
 Fix: replaced if statement with a single assignment statement.
+
+#########
+# Step 4
+Code affected: Bubble.draw
+Flaw: Wrong order of parameters x and y.
+Fix: Changed the order of parameters x and y.
