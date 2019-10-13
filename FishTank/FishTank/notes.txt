@@ -31,3 +31,9 @@ Fix: Removed redundant assignment.
 Code affected: Bubble.floatStraightUp, Bubble.floatLeftUp, Bubble.floatRightUp, Bubble
 Flaw: Repeated code segments in several methods.
 Fix: Added helper method Bubble.grow, and replaced the code segments with the method call.
+
+#########
+# Step 6
+Code affected: Bubble.grow
+Flaw: Used class attribute d that was not meant to be used (for that purpose).
+Fix: Added local variable rd in place of class attribute d.

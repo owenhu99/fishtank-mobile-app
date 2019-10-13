@@ -68,9 +68,9 @@ public class Bubble {
   /** Randomly decide whether to grow the bubble * */
   public void grow() {
     // Generate random double
-    d = Math.random();
+    double rd = Math.random();
     // Decide whether to grow or not using the random double
-    if (d < 0.05) {
+    if (rd < 0.05) {
       // If the appearance is a ., change it to an o
       if (appearance.equals(".")) appearance = "o";
       // If the appearance is an o, change it to a O
