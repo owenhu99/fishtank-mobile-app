@@ -53,7 +53,7 @@ public class Bubble {
    * @param y the y-coordinate of the string's cursor location.
    */
   void drawString(Canvas canvas, String s, int x, int y) {
-    canvas.drawText(s, y * FishTankView.charWidth, x * FishTankView.charHeight, paintText);
+    canvas.drawText(s, x * FishTankView.charWidth, y * FishTankView.charHeight, paintText);
   }
 
   /**
