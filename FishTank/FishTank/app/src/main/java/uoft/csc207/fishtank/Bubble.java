@@ -11,9 +11,6 @@ public class Bubble {
   /** How this bubble appears on the screen. */
   private String appearance;
 
-  /** Use for random movement left and right. */
-  public double d;
-
   /** This bubble's first coordinate. */
   int x;
   /** This bubble's second coordinate. */
@@ -65,6 +62,21 @@ public class Bubble {
     drawString(canvas, appearance, x, y);
   }
 
+  /**
+   * floats the bubble in the left up, right up or straight up direction.
+   *
+   * @param direction <0.33 is straight up, <0.66 is right up, >=0.66 is left up
+   */
+  public void floatBubble(double direction) {
+    y--;
+    if (direction >= 0.66) {
+      x -= 1;
+    } else if (direction >= 0.33) {
+      x += 1;
+    }
+    grow();
+  }
+
   /** Randomly decide whether to grow the bubble * */
   public void grow() {
     // Generate random double
@@ -76,36 +88,5 @@ public class Bubble {
       // If the appearance is an o, change it to a O
       else if (appearance.equals("o")) appearance = "O";
     }
-  }
-
-  /** Causes this item to take its turn in the fish-tank simulation, moving straight up. */
-  public void floatStraightUp() {
-
-    // Move upwards.
-    y--;
-
-    // Figure out whether to grow.
-    grow();
-  }
-
-  /** Causes this item to take its turn in the fish-tank simulation, moving up and left. */
-  public void floatLeftUp() {
-
-    // Move upwards.
-    y--;
-    x -= 1; // left
-
-    // Figure out whether to grow.
-    grow();
-  }
-
-  /** Causes this item to take its turn in the fish-tank simulation. */
-  public void floatRightUp() {
-
-    // Move upwards.
-    y--;
-    x += 1; // right
-    // Figure out whether to grow, if at all.
-    grow();
   }
 }

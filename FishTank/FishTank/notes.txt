@@ -43,3 +43,10 @@ Fix: Added local variable rd in place of class attribute d.
 Code affected: Fish
 Flaw: Ambiguous attribute names r and c.
 Fix: Changed r and c to x and y.
+
+#########
+# Step 9
+Code affected: FishTankManager.update, Bubble
+Flaw: Redundant methods. Unnecessary class attribute.
+Fix: Combined float methods into one. Changed FishTankManager.update to accommodate for the change.
+Removed unnecessary class attribute d, added local variable in update instead.

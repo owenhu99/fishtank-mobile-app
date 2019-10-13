@@ -69,10 +69,7 @@ public class FishTankManager {
         if (FishTankManager.myLittleFishies[a][b] instanceof Bubble) {
           // Figure out whether to float left or right, if at all.
           Bubble heybub = (Bubble) FishTankManager.myLittleFishies[a][b];
-          heybub.d = Math.random();
-          if (heybub.d < 0.33) heybub.floatStraightUp();
-          else if (heybub.d < 0.66) heybub.floatRightUp();
-          else /* heybub.d >= 0.66 */ heybub.floatLeftUp();
+          heybub.floatBubble(Math.random());
         }
       }
     }
