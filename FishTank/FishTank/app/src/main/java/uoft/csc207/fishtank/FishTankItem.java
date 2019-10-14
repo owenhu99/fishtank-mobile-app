@@ -4,9 +4,6 @@ import android.graphics.Canvas;
 
 public abstract class FishTankItem {
 
-    /** How this item appears on the screen. */
-    String appearance;
-
     /** This bubble's first coordinate. */
     int x;
     /** This bubble's second coordinate. */

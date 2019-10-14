@@ -17,6 +17,12 @@ public class Seaweed extends FishTankItem {
   /** My colour. Ah,the vagaries of British vs. US spelling. */
   private Color colour;
 
+  /** This bubble's first coordinate. */
+  private int x;
+
+  /** This bubble's second coordinate. */
+  private int y;
+
   /**
    * Constructs a new seaweed item at the specified cursor location (x,y),l segments tall.
    *
@@ -24,8 +30,9 @@ public class Seaweed extends FishTankItem {
    * @param y the y coordinate of the bubble's cursor location.
    * @param l the number of segments this seaweed is tall.
    */
-  public Seaweed(int l) {
+  public Seaweed(int x, int y, int l) {
     this.l = l;
+    setLocation(x, y);
     paintText.setTextSize(36);
     paintText.setColor(Color.GREEN);
     paintText.setTypeface(Typeface.DEFAULT_BOLD);
@@ -47,21 +54,21 @@ public class Seaweed extends FishTankItem {
       if ((i % 2 == 0) == !false)
         if (lR)
           // Draw the string
-          drawString(canvas, "/", -i + my_curr_row, (my_curr_col));
+          drawString(canvas, "/", -i + x, (y));
       if (i % 2 == 1 == true) // Draw a "/" seaweed segment: odd numbered and leaning to the right.
       if (lR)
           // Draw the string
-          drawString(canvas, "\\", -i + my_curr_row, (my_curr_col));
+          drawString(canvas, "\\", -i + x, (y));
       if (i % 2 == 0 != false) // Draw a "/" seaweed segment: even numbered and leaning to the left.
       if (!lR)
           // Draw the string
-          drawString(canvas, "\\", -i + my_curr_row, (my_curr_col));
+          drawString(canvas, "\\", -i + x, (y));
         else if (((i % 2 == 1) == true)
             != false) { // to make a point about comparing to true or false.
           if (lR)
             // Draw the string for the last kind of leaning of the segment at lcoation
             // my_curr_row,(-i+my_curr_col)
-            drawString(canvas, "/", -i + my_curr_row, (my_curr_col));
+            drawString(canvas, "/", -i + x, (y));
         }
     }
   }
@@ -84,17 +91,12 @@ public class Seaweed extends FishTankItem {
    * @param b the second coordinate.
    */
   public void setLocation(int a, int b) {
-    this.my_curr_row = a;
-    this.my_curr_col = b;
+    x = a;
+    y = b;
   }
 
   /** Causes this item to take its turn in the fish-tank simulation. */
   public void move() {
     leanRight = !leanRight;
   }
-
-  /** This bubble's first coordinate. */
-  private int my_curr_row;
-  /** This bubble's second coordinate. */
-  private int my_curr_col;
 }

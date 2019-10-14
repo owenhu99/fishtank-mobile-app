@@ -22,12 +22,13 @@ public class Fish extends FishTankItem {
   private Paint paintText = new Paint();
 
   /** Constructs a new fish. */
-  public Fish() {
+  public Fish(int x, int y) {
     appearance = "><>";
     paintText.setTextSize(36);
     paintText.setColor(Color.CYAN);
     paintText.setTypeface(Typeface.DEFAULT_BOLD);
     goingRight = true;
+    setLocation(x, y);
   }
 
   /**
@@ -43,8 +44,7 @@ public class Fish extends FishTankItem {
 
   /** Causes this fish to blow a bubble. */
   protected void blowBubble() {
-    Bubble b = new Bubble();
-    b.setLocation(y, x);
+    Bubble b = new Bubble(x, y);
     System.out.println(x + " " + y);
 
     FishTankManager.myLittleFishies[x][y] = b;

@@ -14,19 +14,20 @@ public class HungryFish extends FishTankItem {
   private boolean goingRight;
 
   /** This fish's first coordinate. */
-  private int r;
+  private int x;
   /** This fish's second coordinate. */
-  private int c;
+  private int y;
 
   private Paint paintText = new Paint();
 
   /** Constructs a new hungry fish. */
-  public HungryFish() {
+  public HungryFish(int x, int y) {
     appearance = "><MEHUNGRY>";
     paintText.setTextSize(36);
     paintText.setColor(Color.CYAN);
     paintText.setTypeface(Typeface.DEFAULT_BOLD);
     goingRight = true;
+    setLocation(x, y);
   }
 
   /**
@@ -36,17 +37,16 @@ public class HungryFish extends FishTankItem {
    * @param b the second coordinate.
    */
   public void setLocation(int a, int b) {
-    r = a;
-    c = b;
+    x = a;
+    y = b;
   }
 
   /** Causes this fish to blow a bubble. */
   protected void blowBubble() {
-    Bubble b = new Bubble();
-    b.setLocation(c, r);
-    System.out.println(r + " " + c);
+    Bubble b = new Bubble(x, y);
+    System.out.println(x + " " + y);
 
-    FishTankManager.myLittleFishies[r][c] = b;
+    FishTankManager.myLittleFishies[x][y] = b;
   }
 
   /** Build and initialize this fish's forward and backward appearances. */
@@ -117,7 +117,7 @@ public class HungryFish extends FishTankItem {
    * @param canvas the canvas on which to draw this item.
    */
   public void draw(Canvas canvas) {
-    drawString(canvas, appearance, r, c);
+    drawString(canvas, appearance, x, y);
   }
 
   /** Causes this item to take its turn in the fish-tank simulation. */
@@ -125,9 +125,9 @@ public class HungryFish extends FishTankItem {
 
     // Move one spot to the right or left.
     if (goingRight) {
-      c += 1;
+      y += 1;
     } else {
-      c -= 1;
+      y -= 1;
     }
 
     // Figure out whether I blow a bubble.
@@ -149,10 +149,10 @@ public class HungryFish extends FishTankItem {
     // If it's elss tahn 10%, move up or down.
     if (d < 0.1) {
       // Increment
-      r += 1;
+      x += 1;
     } else if (d < 0.2) {
       // Decrement
-      r -= 1;
+      x -= 1;
     }
   }
 }

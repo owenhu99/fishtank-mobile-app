@@ -19,13 +19,14 @@ public class Bubble extends FishTankItem {
   private Paint paintText = new Paint();
 
   /** Constructs a new bubble at the specified cursor location (x, y). */
-  public Bubble() {
+  public Bubble(int x, int y) {
     // Get a nice-looking grey for the bubble
     paintText.setTextSize(36);
     paintText.setColor(Color.LTGRAY);
     paintText.setTypeface(Typeface.DEFAULT_BOLD);
     // start off with . as the appearance
     appearance = ".";
+    setLocation(x, y);
   }
 
   /**

@@ -64,3 +64,11 @@ Flaw: Lots of redundant code that could be shortened with polymorphism.
 Fix: Added abstract superclass FishTankItem that Bubble, Fish, HungryFish and Seaweed inherit from.
 Shortened redundant code that required typecasting. Changed Bubble.floatBubble to .move to
 accommodate for the change.
+
+#########
+# Step 12
+Code affected: Bubble, Fish, HungryFish, Seaweed, FishTankManager, FishTankItem
+Flaw: Confusing and inconsistently named coordinate system.
+Fix: Changed coordinate attributes' identifiers of all FishTankItem classes to x and y. Added
+setLocation to all FishTankItem classes' constructors. Fixed cases where x and y are incorrectly
+placed/swapped.
