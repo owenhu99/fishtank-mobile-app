@@ -64,7 +64,7 @@ public class Bubble extends FishTankItem {
   }
 
   /** Move bubble straight up, left up or right up, randomly*/
-  public void move() {
+  public int[] move() {
     double direction = Math.random();
     y--;
     if (direction >= 0.66) {
@@ -73,6 +73,7 @@ public class Bubble extends FishTankItem {
       x += 1;
     }
     grow();
+    return new int[]{}; // returns empty since no bubble is ever blown here
   }
 
   /** Randomly decide whether to grow the bubble * */

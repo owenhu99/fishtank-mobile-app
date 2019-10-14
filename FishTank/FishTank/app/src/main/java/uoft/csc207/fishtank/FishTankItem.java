@@ -8,5 +8,5 @@ abstract class FishTankItem {
 
     abstract void draw(Canvas canvas);
 
-    abstract void move();
+    abstract int[] move();
 }

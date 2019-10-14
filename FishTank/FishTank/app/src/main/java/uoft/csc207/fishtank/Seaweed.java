@@ -88,7 +88,8 @@ public class Seaweed extends FishTankItem {
   }
 
   /** Causes this item to take its turn in the fish-tank simulation. */
-  public void move() {
+  public int[] move() {
     leanRight = !leanRight;
+    return new int[]{}; // returns empty since no bubble is ever blown here
   }
 }

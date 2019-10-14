@@ -42,13 +42,6 @@ public class Fish extends FishTankItem {
     y = b;
   }
 
-  /** Causes this fish to blow a bubble. */
-  private void blowBubble() {
-    Bubble b = new Bubble(x, y);
-    System.out.println(x + " " + y);
-    FishTankManager.myLittleFishies.add(b);
-  }
-
   /** Build and initialize this fish's forward and backward appearances. */
   private String reverseAppearance() {
     StringBuilder reverse = new StringBuilder(appearance);
@@ -89,9 +82,11 @@ public class Fish extends FishTankItem {
     drawString(canvas, appearance, x, y);
   }
 
-  /** Causes this item to take its turn in the fish-tank simulation. */
-  public void move() {
-
+  /**
+   * Causes this item to take its turn in the fish-tank simulation.
+   * Returns array of x and y coordinates if a bubble is blown
+   */
+  public int[] move() {
     // Figure out whether I turn around.
     double d = Math.random();
     if (d < 0.1) {
@@ -106,18 +101,21 @@ public class Fish extends FishTankItem {
       y -= 1;
     }
 
-    // Figure out whether I blow a bubble.
-    d = Math.random();
-    if (d < 0.1) {
-      blowBubble();
-    }
-
     // Figure out whether to move up or down, or neither.
     d = Math.random();
     if (d < 0.1) {
       x += 1;
     } else if (d < 0.2) {
       x -= 1;
+    }
+
+    // Figure out whether I blow a bubble.
+    d = Math.random();
+    if (d < 0.1) {
+      System.out.println(x + " " + y);
+      return new int[]{x, y}; // return current coordinates
+    } else {
+      return new int[]{}; // return empty array denoting no bubble blown
     }
   }
 }

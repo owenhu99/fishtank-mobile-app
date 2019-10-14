@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class FishTankManager {
 
   /** All the locations where a fish can be. */
-  static ArrayList<FishTankItem> myLittleFishies;
+  private ArrayList<FishTankItem> myLittleFishies;
   /** The width of myLittleFishes. */
   private int gridWidth;
   /** The height of myLittleFishes. */
@@ -46,7 +46,11 @@ public class FishTankManager {
 
   void update() {
     for (int i = 0; i < myLittleFishies.size(); i++) {
-      if (myLittleFishies.get(i) != null) myLittleFishies.get(i).move();
+      if (myLittleFishies.get(i) != null) {
+        int[] coords = myLittleFishies.get(i).move();
+        // add Bubble item if return array is not empty
+        if (coords.length != 0) myLittleFishies.add(new Bubble(coords[0], coords[1]));
+      }
     }
   }
 
