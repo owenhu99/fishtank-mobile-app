@@ -29,6 +29,16 @@ public class Bubble extends FishTankItem {
     setLocation(x, y);
   }
 
+  /** Get x coordinate */
+  int getX () {
+    return this.x;
+  }
+
+  /** Get y coordinate */
+  int getY () {
+    return this.y;
+  }
+
   /**
    * Set this item's location.
    *

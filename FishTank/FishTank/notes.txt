@@ -120,3 +120,10 @@ be added in an instance of FishTankManager.
 Code affected: Fish.move, Fish.drawString, HungryFish.move, HungryFish.drawString
 Flaw: x and y attributes were swapped.
 Fix: Changed x and y attributes to the correct assignments.
+
+#########
+# Step 20
+Code affected: FishTankItem, Fish, Bubble, HungryFish, Seaweed, FishTankManager
+Flaw: Items in the fish tank can go outside of the grid.
+Fix: Checks if the item is out of bound every time it moves and adjust them accordingly. Added
+getters for FishTankItems. Implemented Turnable interface to denote items that can turn around.

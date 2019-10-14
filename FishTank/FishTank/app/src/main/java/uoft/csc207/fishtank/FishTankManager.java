@@ -46,11 +46,40 @@ public class FishTankManager {
 
   void update() {
     for (int i = 0; i < myLittleFishies.size(); i++) {
-      if (myLittleFishies.get(i) != null) {
-        int[] coords = myLittleFishies.get(i).move();
+      FishTankItem current = myLittleFishies.get(i);
+      if (current != null) {
+        checkBounds(current, i); // check if out of bound and adjust accordingly
+        int[] coords = current.move(); // let item move
         // add Bubble item if return array is not empty
         if (coords.length != 0) myLittleFishies.add(new Bubble(coords[0], coords[1]));
       }
+    }
+  }
+
+  /**
+   * Helper method for checking if a FishTankItem is out of bound and adjust accordingly
+   *
+   * @param item the FishTankItem to be checked
+   * @param i the index of the item in myLittleFishies
+   */
+  private void checkBounds(FishTankItem item, int i) {
+    int x = item.getX();
+    int y = item.getY();
+    if (item instanceof Turnable) {
+      // if item can turn around, it will be manually adjusted back in bound
+      if (x <= 0) {
+        item.setLocation(x + 1, y);
+        ((Turnable) item).turnAround();
+      }
+      else if (x >= gridWidth - 1) {
+        item.setLocation(x - 1, y);
+        ((Turnable) item).turnAround();
+      }
+      if (y <= 0) item.setLocation(x, y + 1);
+      else if (y >= gridHeight) item.setLocation(x, y - 1);
+    } else {
+      // if item cannot turn around, it will be removed once out of bound
+      if (x <= 0 || x > gridWidth || y > gridHeight) myLittleFishies.remove(i);
     }
   }
 

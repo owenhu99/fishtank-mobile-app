@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
-public class HungryFish extends FishTankItem {
+public class HungryFish extends FishTankItem implements Turnable {
 
   /** How this fish appears on the screen. */
   private String appearance;
@@ -28,6 +28,16 @@ public class HungryFish extends FishTankItem {
     paintText.setTypeface(Typeface.DEFAULT_BOLD);
     goingRight = true;
     setLocation(x, y);
+  }
+
+  /** Get x coordinate */
+  int getX () {
+    return this.x;
+  }
+
+  /** Get y coordinate */
+  int getY () {
+    return this.y;
   }
 
   /**
@@ -55,7 +65,7 @@ public class HungryFish extends FishTankItem {
   }
 
   /** Turns this fish around, causing it to reverse direction. */
-  private void turnAround() {
+  public void turnAround() {
     goingRight = !goingRight;
     System.out.println("Turning around" + this.appearance);
     appearance = reverseAppearance();

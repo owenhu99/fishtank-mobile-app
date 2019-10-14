@@ -35,6 +35,16 @@ public class Seaweed extends FishTankItem {
     paintText.setTypeface(Typeface.DEFAULT_BOLD);
   }
 
+  /** Get x coordinate */
+  int getX () {
+    return this.x;
+  }
+
+  /** Get y coordinate */
+  int getY () {
+    return this.y;
+  }
+
   /**
    * Draws this fish tank item. Looks lovely waving in the current, doesn't it?
    *
