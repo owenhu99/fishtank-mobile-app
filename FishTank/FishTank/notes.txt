@@ -138,3 +138,9 @@ Flaw: N/A
 Fix: Added new FishTankItem snail. It moves more slowly than a fish, is more likely to sink down and
 it will get eaten by a hungry fish if they are at the same location. Adjusted HungryFish's behavior
 - more likely to move up and down.
+
+#########
+# Step N+1
+Code affected: FishTankManager.checkBounds
+Flaw: Wrong criteria for going off grid to the top.
+Fix: Changed from y > gridHeight to y <= 0.

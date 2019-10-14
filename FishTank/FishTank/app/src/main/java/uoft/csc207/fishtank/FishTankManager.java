@@ -100,7 +100,7 @@ public class FishTankManager {
       else if (y >= gridHeight) item.setLocation(x, y - 1);
     } else {
       // if item cannot turn around, it will be removed once out of bound
-      if (x <= 0 || x > gridWidth || y > gridHeight) myLittleFishies.remove(i);
+      if (x <= 0 || x > gridWidth || y <= 0) myLittleFishies.remove(i);
     }
   }
 
