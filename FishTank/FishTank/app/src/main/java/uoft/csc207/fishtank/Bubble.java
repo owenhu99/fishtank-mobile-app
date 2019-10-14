@@ -30,12 +30,12 @@ public class Bubble extends FishTankItem {
   }
 
   /** Get x coordinate */
-  int getX () {
+  int getX() {
     return this.x;
   }
 
   /** Get y coordinate */
-  int getY () {
+  int getY() {
     return this.y;
   }
 
@@ -73,7 +73,7 @@ public class Bubble extends FishTankItem {
     drawString(canvas, appearance, x, y);
   }
 
-  /** Move bubble straight up, left up or right up, randomly*/
+  /** Move bubble straight up, left up or right up, randomly */
   public int[] move() {
     double direction = Math.random();
     y--;
@@ -83,7 +83,7 @@ public class Bubble extends FishTankItem {
       x += 1;
     }
     grow();
-    return new int[]{}; // returns empty since no bubble is ever blown here
+    return new int[] {}; // returns empty since no bubble is ever blown here
   }
 
   /** Randomly decide whether to grow the bubble * */

@@ -32,12 +32,12 @@ public class Fish extends FishTankItem implements Turnable {
   }
 
   /** Get x coordinate */
-  int getX () {
+  int getX() {
     return this.x;
   }
 
   /** Get y coordinate */
-  int getY () {
+  int getY() {
     return this.y;
   }
 
@@ -56,11 +56,11 @@ public class Fish extends FishTankItem implements Turnable {
   private String reverseAppearance() {
     StringBuilder reverse = new StringBuilder(appearance);
     for (int i = 0; i < reverse.length(); i++) {
-        if (reverse.charAt(i) == '<') {
-            reverse.setCharAt(i, '>');
-        } else {
-            reverse.setCharAt(i, '<');
-        }
+      if (reverse.charAt(i) == '<') {
+        reverse.setCharAt(i, '>');
+      } else {
+        reverse.setCharAt(i, '<');
+      }
     }
     return reverse.toString();
   }
@@ -93,8 +93,8 @@ public class Fish extends FishTankItem implements Turnable {
   }
 
   /**
-   * Causes this item to take its turn in the fish-tank simulation.
-   * Returns array of x and y coordinates if a bubble is blown
+   * Causes this item to take its turn in the fish-tank simulation. Returns array of x and y
+   * coordinates if a bubble is blown
    */
   public int[] move() {
     // Figure out whether I turn around.
@@ -123,9 +123,9 @@ public class Fish extends FishTankItem implements Turnable {
     d = Math.random();
     if (d < 0.1) {
       System.out.println(x + " " + y);
-      return new int[]{x, y}; // return current coordinates
+      return new int[] {x, y}; // return current coordinates
     } else {
-      return new int[]{}; // return empty array denoting no bubble blown
+      return new int[] {}; // return empty array denoting no bubble blown
     }
   }
 }

@@ -73,8 +73,7 @@ class FishTankManager {
       if (x <= 0) {
         item.setLocation(x + 1, y);
         ((Turnable) item).turnAround();
-      }
-      else if (x >= gridWidth - 1) {
+      } else if (x >= gridWidth - 1) {
         item.setLocation(x - 1, y);
         ((Turnable) item).turnAround();
       }
@@ -99,7 +98,7 @@ class FishTankManager {
     myLittleFishies.add(new Snail(6, 35));
     myLittleFishies.add(new HungryFish(10, 20));
     myLittleFishies.add(new HungryFish(20, 10));
-    myLittleFishies.add(new Seaweed(4,33, 9));
+    myLittleFishies.add(new Seaweed(4, 33, 9));
     myLittleFishies.add(new Seaweed(13, 24, 6));
     myLittleFishies.add(new Seaweed(15, 42, 12));
     myLittleFishies.add(new Seaweed(20, 13, 5));

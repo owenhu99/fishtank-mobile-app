@@ -146,7 +146,12 @@ Flaw: Wrong criteria for going off grid to the top.
 Fix: Changed from y > gridHeight to y <= 0.
 
 #########
-# Step N+1
+# Step N+2
 Code affected: FishTankManager
 Flaw: Unnecessary getter methods and class access modifier not the most private.
 Fix: Removed unnecessary getter methods and changed FishTankManager to package private.
+
+#########
+# Step N+3
+Code affected: All .java files except FishTankView
+Reformatted using Google Java style formatter.

@@ -36,12 +36,12 @@ public class Seaweed extends FishTankItem {
   }
 
   /** Get x coordinate */
-  int getX () {
+  int getX() {
     return this.x;
   }
 
   /** Get y coordinate */
-  int getY () {
+  int getY() {
     return this.y;
   }
 
@@ -100,6 +100,6 @@ public class Seaweed extends FishTankItem {
   /** Causes this item to take its turn in the fish-tank simulation. */
   public int[] move() {
     leanRight = !leanRight;
-    return new int[]{}; // returns empty since no bubble is ever blown here
+    return new int[] {}; // returns empty since no bubble is ever blown here
   }
 }
