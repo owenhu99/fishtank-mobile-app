@@ -44,32 +44,27 @@ public class Seaweed extends FishTankItem {
    * @param canvas the graphics context in which to draw this item.
    */
   public void draw(Canvas canvas) {
-
-    // WWhich way does the first segment lean?
-    boolean lR = leanRight;
-
-    for (int i = 0;
-        i < l;
-        i++) { // Draw a "/" seaweed segment: even numbered and leaning to the right.
-      if ((i % 2 == 0) == !false)
-        if (lR)
-          // Draw the string
-          drawString(canvas, "/", -i + x, (y));
-      if (i % 2 == 1 == true) // Draw a "/" seaweed segment: odd numbered and leaning to the right.
-      if (lR)
-          // Draw the string
-          drawString(canvas, "\\", -i + x, (y));
-      if (i % 2 == 0 != false) // Draw a "/" seaweed segment: even numbered and leaning to the left.
-      if (!lR)
-          // Draw the string
-          drawString(canvas, "\\", -i + x, (y));
-        else if (((i % 2 == 1) == true)
-            != false) { // to make a point about comparing to true or false.
-          if (lR)
-            // Draw the string for the last kind of leaning of the segment at lcoation
-            // my_curr_row,(-i+my_curr_col)
-            drawString(canvas, "/", -i + x, (y));
+    for (int i = 0; i < l; i++) {
+      // For even numbered segment
+      if (i % 2 == 0) {
+        if (leanRight) {
+          // Bottom leaning right
+          drawString(canvas, "/", x, y - i);
+        } else {
+          // Bottom leaning left
+          drawString(canvas, "\\", x, y - i);
         }
+      }
+      // For odd numbered segment
+      else {
+        if (leanRight) {
+          // Bottom leaning right
+          drawString(canvas, "\\", x, y - i);
+        } else {
+          // Bottom leaning left
+          drawString(canvas, "/", x, y - i);
+        }
+      }
     }
   }
   /**
@@ -81,7 +76,7 @@ public class Seaweed extends FishTankItem {
    * @param y the y-coordinate of the string's cursor location.
    */
   void drawString(Canvas canvas, String s, int x, int y) {
-    canvas.drawText(s, y * FishTankView.charWidth, x * FishTankView.charHeight, paintText);
+    canvas.drawText(s, x * FishTankView.charWidth, y * FishTankView.charHeight, paintText);
   }
 
   /**

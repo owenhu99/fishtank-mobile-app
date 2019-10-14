@@ -66,9 +66,9 @@ public class FishTankManager {
     myLittleFishies[23][18] = new Fish(23, 18);
     myLittleFishies[6][12] = new Fish(6, 12);
     myLittleFishies[10][20] = new HungryFish(10, 20);
-    myLittleFishies[33][4] = new Seaweed(33,4, 9);
-    myLittleFishies[24][13] = new Seaweed(24, 13, 6);
-    myLittleFishies[42][15] = new Seaweed(42, 15, 12);
-    myLittleFishies[13][20] = new Seaweed(13, 20, 5);
+    myLittleFishies[33][4] = new Seaweed(4,33, 9);
+    myLittleFishies[24][13] = new Seaweed(13, 24, 6);
+    myLittleFishies[42][15] = new Seaweed(15, 42, 12);
+    myLittleFishies[13][20] = new Seaweed(20, 13, 5);
   }
 }

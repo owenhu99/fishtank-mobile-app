@@ -72,3 +72,10 @@ Flaw: Confusing and inconsistently named coordinate system.
 Fix: Changed coordinate attributes' identifiers of all FishTankItem classes to x and y. Added
 setLocation to all FishTankItem classes' constructors. Fixed cases where x and y are incorrectly
 placed/swapped.
+
+#########
+# Step 12
+Code affected: Seaweed.draw, Seaweed.drawString, FishTankManager.createTankItems
+Flaw: Repetitive and hard-to-read if code segment. x and y swapped.
+Fix: Cleaned up if segment, swapped x and y to represent the correct coordinates, changed the
+parameters in createTankItems to accommodate for swapping x and y, so that it looks the same.
