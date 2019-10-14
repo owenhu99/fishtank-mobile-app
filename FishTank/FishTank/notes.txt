@@ -122,8 +122,11 @@ Flaw: x and y attributes were swapped.
 Fix: Changed x and y attributes to the correct assignments.
 
 #########
-# Step 20
+# Step 20 / Step N-1
 Code affected: FishTankItem, Fish, Bubble, HungryFish, Seaweed, FishTankManager
 Flaw: Items in the fish tank can go outside of the grid.
-Fix: Checks if the item is out of bound every time it moves and adjust them accordingly. Added
-getters for FishTankItems. Implemented Turnable interface to denote items that can turn around.
+Fix: Implemented Turnable interface to denote items that can turn around. Checks if the item is out
+of bound every time it moves and adjust them accordingly - if item is a turnable object (i.e. Fish
+or HungryFish), manually move them back in bound and turn them around; if item is not turnable
+(idle), remove them from the ArrayList when they've moved outside. Added getters for FishTankItems.
+Removed 2D array in Step 17.
