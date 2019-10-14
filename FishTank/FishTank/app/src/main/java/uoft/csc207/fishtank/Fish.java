@@ -9,10 +9,10 @@ import android.graphics.Typeface;
 public class Fish {
 
   /** How this fish appears on the screen. */
-  String appearance;
+  private String appearance;
 
   /** Indicates whether this fish is moving right. */
-  boolean goingRight;
+  private boolean goingRight;
 
   /** This fish's x coordinate. */
   private int x;

@@ -50,3 +50,9 @@ Code affected: FishTankManager.update, Bubble
 Flaw: Redundant methods. Unnecessary class attribute.
 Fix: Combined float methods into one. Changed FishTankManager.update to accommodate for the change.
 Removed unnecessary class attribute d, added local variable in update instead.
+
+#########
+# Step 10
+Code affected: all .java files except MainActivity and MainThread
+Flaw: Class attributes were public.
+Fix: Changed class attributes to private or protected.

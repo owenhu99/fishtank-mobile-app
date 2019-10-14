@@ -9,13 +9,13 @@ public class Seaweed {
   private Paint paintText = new Paint();
 
   /** The number of weed segments. */
-  int l;
+  private int l;
 
   /** Indicates whether the bottom segment is leaning right. */
-  boolean leanRight;
+  private boolean leanRight;
 
   /** My colour. Ah,the vagaries of British vs. US spelling. */
-  Color colour;
+  private Color colour;
 
   /**
    * Constructs a new seaweed item at the specified cursor location (x,y),l segments tall.

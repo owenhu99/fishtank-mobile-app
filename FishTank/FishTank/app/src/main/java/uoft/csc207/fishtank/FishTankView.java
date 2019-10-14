@@ -17,12 +17,12 @@ public class FishTankView extends SurfaceView implements SurfaceHolder.Callback 
   private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
 
   /** The width of a character. */
-  public static float charWidth;
+  protected static float charWidth;
   /** The height of a character. */
-  public static float charHeight;
+  protected static float charHeight;
 
   /** The fish tank contents. */
-  public FishTankManager tankManager;
+  protected FishTankManager tankManager;
   /** The part of the program that manages time. */
   private MainThread thread;
 

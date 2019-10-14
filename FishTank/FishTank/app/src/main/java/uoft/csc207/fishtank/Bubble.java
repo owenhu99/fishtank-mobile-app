@@ -12,9 +12,9 @@ public class Bubble {
   private String appearance;
 
   /** This bubble's first coordinate. */
-  int x;
+  private int x;
   /** This bubble's second coordinate. */
-  protected int y;
+  private int y;
 
   private Paint paintText = new Paint();
 

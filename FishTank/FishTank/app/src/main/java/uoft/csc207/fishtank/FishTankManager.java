@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 public class FishTankManager {
 
   /** All the locations where a fish can be. */
-  public static Object[][] myLittleFishies;
+  protected static Object[][] myLittleFishies;
   /** The width of myLittleFishes. */
   private int gridWidth;
   /** The height of myLittleFishes. */

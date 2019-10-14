@@ -8,15 +8,15 @@ import android.graphics.Typeface;
 public class HungryFish {
 
   /** How this fish appears on the screen. */
-  public String appearance;
+  private String appearance;
 
   /** Indicates whether this fish is moving right. */
-  boolean goingRight;
+  private boolean goingRight;
 
   /** This fish's first coordinate. */
-  int r;
+  private int r;
   /** This fish's second coordinate. */
-  int c;
+  private int c;
 
   private Paint paintText = new Paint();
 
