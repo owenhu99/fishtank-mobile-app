@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 public class FishTankManager {
 
   /** All the locations where a fish can be. */
-  protected static FishTankItem[][] myLittleFishies;
+  static FishTankItem[][] myLittleFishies;
   /** The width of myLittleFishes. */
   private int gridWidth;
   /** The height of myLittleFishes. */
@@ -30,13 +30,13 @@ public class FishTankManager {
   }
 
   /** The fish tank manager on a screen with height rows and width columns. */
-  public FishTankManager(int height, int width) {
+  FishTankManager(int height, int width) {
     gridHeight = height;
     gridWidth = width;
     myLittleFishies = new FishTankItem[height][width];
   }
 
-  public void draw(Canvas canvas) {
+  void draw(Canvas canvas) {
     for (int a = 0; a != gridHeight; a++) {
       for (int b = 0; b != gridWidth; b++) {
         if (FishTankManager.myLittleFishies[a][b] != null)
@@ -45,7 +45,7 @@ public class FishTankManager {
       }
     }
 
-  public void update() {
+  void update() {
     for (int a = 0; a != gridHeight; a++) {
       for (int b = 0; b != gridWidth; b++) {
         if (FishTankManager.myLittleFishies[a][b] != null)
@@ -54,7 +54,7 @@ public class FishTankManager {
     }
   }
 
-  public void createTankItems() {
+  void createTankItems() {
     FishTankManager.myLittleFishies[28][18] = new Fish(28, 18);
     FishTankManager.myLittleFishies[10][22] = new Fish(10, 22);
     myLittleFishies[17][14] = new Fish(17, 14);

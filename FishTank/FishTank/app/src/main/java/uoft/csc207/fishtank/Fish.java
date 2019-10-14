@@ -22,7 +22,7 @@ public class Fish extends FishTankItem {
   private Paint paintText = new Paint();
 
   /** Constructs a new fish. */
-  public Fish(int x, int y) {
+  Fish(int x, int y) {
     appearance = "><>";
     paintText.setTextSize(36);
     paintText.setColor(Color.CYAN);
@@ -43,7 +43,7 @@ public class Fish extends FishTankItem {
   }
 
   /** Causes this fish to blow a bubble. */
-  protected void blowBubble() {
+  private void blowBubble() {
     Bubble b = new Bubble(x, y);
     System.out.println(x + " " + y);
 
@@ -64,7 +64,7 @@ public class Fish extends FishTankItem {
   }
 
   /** Turns this fish around, causing it to reverse direction. */
-  protected void turnAround() {
+  private void turnAround() {
     goingRight = !goingRight;
     appearance = reverseAppearance();
   }
@@ -77,7 +77,7 @@ public class Fish extends FishTankItem {
    * @param x the x-coordinate of the string's cursor location.
    * @param y the y-coordinate of the string's cursor location.
    */
-  void drawString(Canvas canvas, String s, int x, int y) {
+  private void drawString(Canvas canvas, String s, int x, int y) {
     canvas.drawText(s, y * FishTankView.charWidth, x * FishTankView.charHeight, paintText);
   }
 

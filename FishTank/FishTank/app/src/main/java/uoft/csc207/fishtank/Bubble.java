@@ -19,7 +19,7 @@ public class Bubble extends FishTankItem {
   private Paint paintText = new Paint();
 
   /** Constructs a new bubble at the specified cursor location (x, y). */
-  public Bubble(int x, int y) {
+  Bubble(int x, int y) {
     // Get a nice-looking grey for the bubble
     paintText.setTextSize(36);
     paintText.setColor(Color.LTGRAY);
@@ -50,7 +50,7 @@ public class Bubble extends FishTankItem {
    * @param x the x-coordinate of the string's cursor location.
    * @param y the y-coordinate of the string's cursor location.
    */
-  void drawString(Canvas canvas, String s, int x, int y) {
+  private void drawString(Canvas canvas, String s, int x, int y) {
     canvas.drawText(s, x * FishTankView.charWidth, y * FishTankView.charHeight, paintText);
   }
 
@@ -76,7 +76,7 @@ public class Bubble extends FishTankItem {
   }
 
   /** Randomly decide whether to grow the bubble * */
-  public void grow() {
+  private void grow() {
     // Generate random double
     double rd = Math.random();
     // Decide whether to grow or not using the random double

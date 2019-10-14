@@ -2,12 +2,7 @@ package uoft.csc207.fishtank;
 
 import android.graphics.Canvas;
 
-public abstract class FishTankItem {
-
-    /** This bubble's first coordinate. */
-    int x;
-    /** This bubble's second coordinate. */
-    int y;
+abstract class FishTankItem {
 
     abstract void setLocation(int x, int y);
 

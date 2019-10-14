@@ -14,9 +14,6 @@ public class Seaweed extends FishTankItem {
   /** Indicates whether the bottom segment is leaning right. */
   private boolean leanRight;
 
-  /** My colour. Ah,the vagaries of British vs. US spelling. */
-  private Color colour;
-
   /** This bubble's first coordinate. */
   private int x;
 
@@ -30,7 +27,7 @@ public class Seaweed extends FishTankItem {
    * @param y the y coordinate of the bubble's cursor location.
    * @param l the number of segments this seaweed is tall.
    */
-  public Seaweed(int x, int y, int l) {
+  Seaweed(int x, int y, int l) {
     this.l = l;
     setLocation(x, y);
     paintText.setTextSize(36);
@@ -75,7 +72,7 @@ public class Seaweed extends FishTankItem {
    * @param x the x-coordinate of the string's cursor location.
    * @param y the y-coordinate of the string's cursor location.
    */
-  void drawString(Canvas canvas, String s, int x, int y) {
+  private void drawString(Canvas canvas, String s, int x, int y) {
     canvas.drawText(s, x * FishTankView.charWidth, y * FishTankView.charHeight, paintText);
   }
 
