@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 
 /** A bubble. */
-public class Bubble {
+public class Bubble extends FishTankItem {
 
   /** How this bubble appears on the screen. */
   private String appearance;
@@ -62,12 +62,9 @@ public class Bubble {
     drawString(canvas, appearance, x, y);
   }
 
-  /**
-   * floats the bubble in the left up, right up or straight up direction.
-   *
-   * @param direction <0.33 is straight up, <0.66 is right up, >=0.66 is left up
-   */
-  public void floatBubble(double direction) {
+  /** Move bubble straight up, left up or right up, randomly*/
+  public void move() {
+    double direction = Math.random();
     y--;
     if (direction >= 0.66) {
       x -= 1;

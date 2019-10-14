@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
-public class Seaweed {
+public class Seaweed extends FishTankItem {
   private Paint paintText = new Paint();
 
   /** The number of weed segments. */
@@ -89,7 +89,7 @@ public class Seaweed {
   }
 
   /** Causes this item to take its turn in the fish-tank simulation. */
-  public void wave() {
+  public void move() {
     leanRight = !leanRight;
   }
 

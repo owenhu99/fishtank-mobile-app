@@ -56,3 +56,11 @@ Removed unnecessary class attribute d, added local variable in update instead.
 Code affected: all .java files except MainActivity and MainThread
 Flaw: Class attributes were public.
 Fix: Changed class attributes to private or protected.
+
+#########
+# Step 11
+Code affected: Bubble, Fish, HungryFish, Seaweed, FishTankManager
+Flaw: Lots of redundant code that could be shortened with polymorphism.
+Fix: Added abstract superclass FishTankItem that Bubble, Fish, HungryFish and Seaweed inherit from.
+Shortened redundant code that required typecasting. Changed Bubble.floatBubble to .move to
+accommodate for the change.

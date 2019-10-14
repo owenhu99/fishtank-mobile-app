@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 public class FishTankManager {
 
   /** All the locations where a fish can be. */
-  protected static Object[][] myLittleFishies;
+  protected static FishTankItem[][] myLittleFishies;
   /** The width of myLittleFishes. */
   private int gridWidth;
   /** The height of myLittleFishes. */
@@ -33,44 +33,23 @@ public class FishTankManager {
   public FishTankManager(int height, int width) {
     gridHeight = height;
     gridWidth = width;
-    myLittleFishies = new Object[height][width];
+    myLittleFishies = new FishTankItem[height][width];
   }
 
   public void draw(Canvas canvas) {
     for (int a = 0; a != gridHeight; a++) {
       for (int b = 0; b != gridWidth; b++) {
         if (FishTankManager.myLittleFishies[a][b] != null)
-          if (FishTankManager.myLittleFishies[a][b] instanceof Fish) {
-            ((Fish) FishTankManager.myLittleFishies[a][b]).draw(canvas);
-          } else if (FishTankManager.myLittleFishies[a][b] instanceof Seaweed) {
-            ((Seaweed) FishTankManager.myLittleFishies[a][b]).draw(canvas);
-          } else if (FishTankManager.myLittleFishies[a][b] instanceof HungryFish) {
-            ((HungryFish) FishTankManager.myLittleFishies[a][b]).draw(canvas);
-          }
-        if (FishTankManager.myLittleFishies[a][b] instanceof Bubble) {
-          Bubble heybub = (Bubble) FishTankManager.myLittleFishies[a][b];
-          heybub.draw(canvas);
+          FishTankManager.myLittleFishies[a][b].draw(canvas);
         }
       }
     }
-  }
 
   public void update() {
     for (int a = 0; a != gridHeight; a++) {
       for (int b = 0; b != gridWidth; b++) {
         if (FishTankManager.myLittleFishies[a][b] != null)
-          if (FishTankManager.myLittleFishies[a][b] instanceof Fish) {
-            ((Fish) FishTankManager.myLittleFishies[a][b]).move();
-          } else if (FishTankManager.myLittleFishies[a][b] instanceof Seaweed) {
-            ((Seaweed) FishTankManager.myLittleFishies[a][b]).wave();
-          } else if (FishTankManager.myLittleFishies[a][b] instanceof HungryFish) {
-            ((HungryFish) FishTankManager.myLittleFishies[a][b]).move();
-          }
-        if (FishTankManager.myLittleFishies[a][b] instanceof Bubble) {
-          // Figure out whether to float left or right, if at all.
-          Bubble heybub = (Bubble) FishTankManager.myLittleFishies[a][b];
-          heybub.floatBubble(Math.random());
-        }
+          FishTankManager.myLittleFishies[a][b].move();
       }
     }
   }

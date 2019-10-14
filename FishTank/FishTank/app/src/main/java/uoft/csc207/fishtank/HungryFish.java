@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
-public class HungryFish {
+public class HungryFish extends FishTankItem {
 
   /** How this fish appears on the screen. */
   private String appearance;

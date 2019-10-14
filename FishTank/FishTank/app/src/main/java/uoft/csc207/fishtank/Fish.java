@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 
 /** A fish. */
-public class Fish {
+public class Fish extends FishTankItem {
 
   /** How this fish appears on the screen. */
   private String appearance;
