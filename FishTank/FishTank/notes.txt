@@ -130,3 +130,11 @@ of bound every time it moves and adjust them accordingly - if item is a turnable
 or HungryFish), manually move them back in bound and turn them around; if item is not turnable
 (idle), remove them from the ArrayList when they've moved outside. Added getters for FishTankItems.
 Removed 2D array in Step 17.
+
+#########
+# Step N
+Code affected: FishTankManager, HungryFish
+Flaw: N/A
+Fix: Added new FishTankItem snail. It moves more slowly than a fish, is more likely to sink down and
+it will get eaten by a hungry fish if they are at the same location. Adjusted HungryFish's behavior
+- more likely to move up and down.
