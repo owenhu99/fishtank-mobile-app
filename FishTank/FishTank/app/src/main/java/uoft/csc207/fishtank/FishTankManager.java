@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 
 import java.util.ArrayList;
 
-public class FishTankManager {
+class FishTankManager {
 
   /** All the locations where a fish can be. */
   private ArrayList<FishTankItem> myLittleFishies;
@@ -12,24 +12,6 @@ public class FishTankManager {
   private int gridWidth;
   /** The height of myLittleFishes. */
   private int gridHeight;
-
-  /**
-   * Return the width of a row of locations.
-   *
-   * @return the width of a column of locations.
-   */
-  public int getGridWidth() {
-    return gridWidth;
-  }
-
-  /**
-   * Return the height of a column of locations.
-   *
-   * @return the height of a column of locations.
-   */
-  public int getGridHeight() {
-    return gridHeight;
-  }
 
   /** The fish tank manager on a screen with height rows and width columns. */
   FishTankManager(int height, int width) {

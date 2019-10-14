@@ -144,3 +144,9 @@ it will get eaten by a hungry fish if they are at the same location. Adjusted Hu
 Code affected: FishTankManager.checkBounds
 Flaw: Wrong criteria for going off grid to the top.
 Fix: Changed from y > gridHeight to y <= 0.
+
+#########
+# Step N+1
+Code affected: FishTankManager
+Flaw: Unnecessary getter methods and class access modifier not the most private.
+Fix: Removed unnecessary getter methods and changed FishTankManager to package private.
