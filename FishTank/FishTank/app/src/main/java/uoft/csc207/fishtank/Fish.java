@@ -52,40 +52,15 @@ public class Fish extends FishTankItem {
 
   /** Build and initialize this fish's forward and backward appearances. */
   private String reverseAppearance() {
-    String reverse = "";
-    for (int i = appearance.length() - 1; i >= 0; i--) {
-      switch (appearance.charAt(i)) {
-        case ')':
-          reverse += '(';
-          break;
-        case '(':
-          reverse += ')';
-          break;
-        case '>':
-          reverse += '<';
-          break;
-        case '<':
-          reverse += '>';
-          break;
-        case '}':
-          reverse += '{';
-          break;
-        case '{':
-          reverse += '}';
-          break;
-        case '[':
-          reverse += ']';
-          break;
-        case ']':
-          reverse += '[';
-          break;
-        default:
-          reverse += appearance.charAt(i);
-          break;
-      }
+    StringBuilder reverse = new StringBuilder(appearance);
+    for (int i = 0; i < reverse.length(); i++) {
+        if (reverse.charAt(i) == '<') {
+            reverse.setCharAt(i, '>');
+        } else {
+            reverse.setCharAt(i, '<');
+        }
     }
-
-    return reverse;
+    return reverse.toString();
   }
 
   /** Turns this fish around, causing it to reverse direction. */
