@@ -155,3 +155,7 @@ Fix: Removed unnecessary getter methods and changed FishTankManager to package p
 # Step N+3
 Code affected: All .java files except FishTankView
 Reformatted using Google Java style formatter.
+
+#########
+# Step N+4
+Code affected: FishTankItem, FishTankManager, Turnable

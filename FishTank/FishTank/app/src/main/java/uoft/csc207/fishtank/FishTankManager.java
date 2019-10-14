@@ -85,6 +85,7 @@ class FishTankManager {
     }
   }
 
+  /** Initialize items in the fish tank*/
   void createTankItems() {
     myLittleFishies.add(new Fish(28, 18));
     myLittleFishies.add(new Fish(10, 22));
