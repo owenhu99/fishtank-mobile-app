@@ -84,4 +84,11 @@ parameters in createTankItems to accommodate for swapping x and y, so that it lo
 # Step 14
 Code affected: Fish.reverseAppearance
 Flaw: Inefficient reverse method.
-Fix: Reduced redundant code in reverse method of Fish and used a more efficient way.
+Fix: Changed code in reverse method of Fish to a more efficient way.
+
+#########
+# Step 15
+Code affected: HungryFish.reverseAppearance
+Flaw: Inefficient reverse method and redundant if statement.
+Fix: Changed code in reverse method of HungryFish to a more efficient way and removed the redundant
+if statement.

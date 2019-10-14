@@ -51,52 +51,23 @@ public class HungryFish extends FishTankItem {
 
   /** Build and initialize this fish's forward and backward appearances. */
   private String reverseAppearance() {
-    System.out.println("Turnign around" + this.appearance);
-    String reverse = "";
-    for (int i = appearance.length() - 1; i >= 0; i--) {
-      switch (appearance.charAt(i)) {
-        case ')':
-          reverse += '(';
-          break;
-        case '(':
-          reverse += ')';
-          break;
-        case '>':
-          reverse += '<';
-          break;
-        case '<':
-          reverse += '>';
-          break;
-        case '}':
-          reverse += '{';
-          break;
-        case '{':
-          reverse += '}';
-          break;
-        case '[':
-          reverse += ']';
-          break;
-        case ']':
-          reverse += '[';
-          break;
-        default:
-          reverse += appearance.charAt(i);
-          break;
+    StringBuilder reverse = new StringBuilder(appearance).reverse();
+    for (int i = 0; i < reverse.length(); i++) {
+      if (reverse.charAt(i) == '<') {
+        reverse.setCharAt(i, '>');
+      } else if (reverse.charAt(i) == '>') {
+        reverse.setCharAt(i, '<');
       }
     }
-    System.out.println("Turned around" + this.appearance);
-    appearance = reverse;
-    return reverse;
+    return reverse.toString();
   }
 
   /** Turns this fish around, causing it to reverse direction. */
   protected void turnAround() {
     goingRight = !goingRight;
-    if (goingRight) {
-      appearance = reverseAppearance();
-    } else {
-      appearance = reverseAppearance();
-    }
+    System.out.println("Turning around" + this.appearance);
+    appearance = reverseAppearance();
+    System.out.println("Turned around" + this.appearance);
   }
 
   /**
