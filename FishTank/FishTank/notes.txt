@@ -114,3 +114,9 @@ Flaw: ArrayList of FishTankItem's was static, so no more than one fish tank can 
 Fix: Changed myLittleFishies to private. Modified move methods to return an array of int - empty
 meaning no bubble was blown, length 2 representing coordinates of bubble blown. So Bubble items can
 be added in an instance of FishTankManager.
+
+#########
+# Step 19
+Code affected: Fish.move, Fish.drawString, HungryFish.move, HungryFish.drawString
+Flaw: x and y attributes were swapped.
+Fix: Changed x and y attributes to the correct assignments.

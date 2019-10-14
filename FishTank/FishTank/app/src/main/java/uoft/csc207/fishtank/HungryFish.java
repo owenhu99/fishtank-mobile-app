@@ -71,7 +71,7 @@ public class HungryFish extends FishTankItem {
    * @param y the y-coordinate of the string's cursor location.
    */
   private void drawString(Canvas canvas, String s, int x, int y) {
-    canvas.drawText(s, y * FishTankView.charWidth, x * FishTankView.charHeight, paintText);
+    canvas.drawText(s, x * FishTankView.charWidth, y * FishTankView.charHeight, paintText);
   }
 
   /**
@@ -97,9 +97,9 @@ public class HungryFish extends FishTankItem {
 
     // Move one spot to the right or left.
     if (goingRight) {
-      y += 1;
+      x += 1;
     } else {
-      y -= 1;
+      x -= 1;
     }
 
     // Figure out whether to move up or down, or neither.
@@ -107,10 +107,10 @@ public class HungryFish extends FishTankItem {
     // If it's less than 10%, move up or down.
     if (d < 0.1) {
       // Increment
-      x += 1;
+      y += 1;
     } else if (d < 0.2) {
       // Decrement
-      x -= 1;
+      y -= 1;
     }
 
     // If it's less than 10%, blow a bubble.
