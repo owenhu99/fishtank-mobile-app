@@ -99,3 +99,10 @@ Code affected: all .java files except MainActivity and MainThread
 Flaw: Methods and attributes not as private as possible. Unnecessary attribute declarations.
 Fix: Changed methods and attributes to the most secure access modifier possible. Removed unnecessary
 attribute declarations.
+
+#########
+# Step 17
+Code affected: FishTankManager, Fish.blowBubble, HungryFish.blowBubble
+Flaw: Redundant 2D array of FishTankItems.
+Fix: Changed 2D array to 1D ArrayList and changed previous assignment statements to ArrayList.add()
+statements.

@@ -2,10 +2,12 @@ package uoft.csc207.fishtank;
 
 import android.graphics.Canvas;
 
+import java.util.ArrayList;
+
 public class FishTankManager {
 
   /** All the locations where a fish can be. */
-  static FishTankItem[][] myLittleFishies;
+  static ArrayList<FishTankItem> myLittleFishies;
   /** The width of myLittleFishes. */
   private int gridWidth;
   /** The height of myLittleFishes. */
@@ -33,42 +35,36 @@ public class FishTankManager {
   FishTankManager(int height, int width) {
     gridHeight = height;
     gridWidth = width;
-    myLittleFishies = new FishTankItem[height][width];
+    myLittleFishies = new ArrayList<>();
   }
 
   void draw(Canvas canvas) {
-    for (int a = 0; a != gridHeight; a++) {
-      for (int b = 0; b != gridWidth; b++) {
-        if (FishTankManager.myLittleFishies[a][b] != null)
-          FishTankManager.myLittleFishies[a][b].draw(canvas);
-        }
-      }
+    for (int i = 0; i < myLittleFishies.size(); i++) {
+      if (myLittleFishies.get(i) != null) myLittleFishies.get(i).draw(canvas);
     }
+  }
 
   void update() {
-    for (int a = 0; a != gridHeight; a++) {
-      for (int b = 0; b != gridWidth; b++) {
-        if (FishTankManager.myLittleFishies[a][b] != null)
-          FishTankManager.myLittleFishies[a][b].move();
-      }
+    for (int i = 0; i < myLittleFishies.size(); i++) {
+      if (myLittleFishies.get(i) != null) myLittleFishies.get(i).move();
     }
   }
 
   void createTankItems() {
-    FishTankManager.myLittleFishies[28][18] = new Fish(28, 18);
-    FishTankManager.myLittleFishies[10][22] = new Fish(10, 22);
-    myLittleFishies[17][14] = new Fish(17, 14);
-    myLittleFishies[15][28] = new Fish(15, 28);
-    myLittleFishies[43][18] = new Fish(43, 18);
-    myLittleFishies[16][5] = new Fish(16, 5);
-    myLittleFishies[16][12] = new Fish(16, 12);
-    myLittleFishies[16][22] = new Fish(16, 22);
-    myLittleFishies[23][18] = new Fish(23, 18);
-    myLittleFishies[6][12] = new Fish(6, 12);
-    myLittleFishies[10][20] = new HungryFish(10, 20);
-    myLittleFishies[33][4] = new Seaweed(4,33, 9);
-    myLittleFishies[24][13] = new Seaweed(13, 24, 6);
-    myLittleFishies[42][15] = new Seaweed(15, 42, 12);
-    myLittleFishies[13][20] = new Seaweed(20, 13, 5);
+    myLittleFishies.add(new Fish(28, 18));
+    myLittleFishies.add(new Fish(10, 22));
+    myLittleFishies.add(new Fish(17, 14));
+    myLittleFishies.add(new Fish(15, 28));
+    myLittleFishies.add(new Fish(43, 18));
+    myLittleFishies.add(new Fish(16, 5));
+    myLittleFishies.add(new Fish(16, 12));
+    myLittleFishies.add(new Fish(16, 22));
+    myLittleFishies.add(new Fish(23, 18));
+    myLittleFishies.add(new Fish(6, 12));
+    myLittleFishies.add(new HungryFish(10, 20));
+    myLittleFishies.add(new Seaweed(4,33, 9));
+    myLittleFishies.add(new Seaweed(13, 24, 6));
+    myLittleFishies.add(new Seaweed(15, 42, 12));
+    myLittleFishies.add(new Seaweed(20, 13, 5));
   }
 }

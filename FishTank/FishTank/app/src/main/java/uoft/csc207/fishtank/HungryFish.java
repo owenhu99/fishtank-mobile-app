@@ -46,7 +46,7 @@ public class HungryFish extends FishTankItem {
     Bubble b = new Bubble(x, y);
     System.out.println(x + " " + y);
 
-    FishTankManager.myLittleFishies[x][y] = b;
+    FishTankManager.myLittleFishies.add(b);
   }
 
   /** Build and initialize this fish's forward and backward appearances. */
