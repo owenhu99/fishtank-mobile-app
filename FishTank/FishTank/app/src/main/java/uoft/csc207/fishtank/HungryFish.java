@@ -115,10 +115,10 @@ public class HungryFish extends FishTankItem implements Turnable {
     // Figure out whether to move up or down, or neither.
     d = Math.random();
     // If it's less than 10%, move up or down.
-    if (d < 0.2) {
+    if (d < 0.3) {
       // Increment
       y += 1;
-    } else if (d < 0.4) {
+    } else if (d < 0.5) {
       // Decrement
       y -= 1;
     }
